@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -13,29 +15,41 @@
   <title th:text="${title}">Yongin Secretary</title>
 </head>
 <header>
-
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:fragment="menu(menu)">
-    <a class="navbar-brand" th:href="@{/}">Yongin Secretary</a>
+    <a class="navbar-brand" href="#" th:href="@{/index}">Yongin Secretary</a>
+
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/}">홈 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/index}">홈 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/board/list}">게시판 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/todo/write/}">할일등록 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/todo}">투두 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/content/list/1}">공지사항 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/weather}">날씨 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/content/list/2}">자유게시판 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/login}">로그인 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/user/list/}">유저리스트 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
         <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
-          <a class="nav-link" href="#" th:href="@{/signup}">회원가입 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+          <a class="nav-link" href="#" th:href="@{/content/list/4}">내가 좋아한 글 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+        </li>
+        <li class="nav-item" th:classappend="${menu} == 'home'? 'active'" style="margin-left:240px;">
+          <a class="nav-link" href="#" th:href="@{/user/login}">로그인 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+        </li>
+        <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
+          <a class="nav-link" href="#" th:href="@{/user/logout}">로그아웃 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+        </li>
+        <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
+          <a class="nav-link" href="#" th:href="@{/user/signup}">회원가입 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
+        </li>
+        <li class="nav-item" th:classappend="${menu} == 'home'? 'active'">
+          <a class="nav-link" href="#" th:href="@{/user/edit}">정보수정 <span class="sr-only" th:if="${menu} == 'home'">(current)</span></a>
         </li>
 
 
@@ -57,25 +71,12 @@
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form> -->
     </div>
-
   </nav>
 </header>
 <body>
 <br><br><br>
-<div th:fragment="topDiv2">
-  <br/>
-  <div style="margin-left: 270px; margin-right: 120px; display: inline-block">
-    <button class="myButton2" th:onclick="|location.href='@{/todo/write/}'|">할 일 등록</button>
-    <button class="myButton2" th:onclick="|location.href='@{/content/list/1}'|">공지사항</button>
-    <button class="myButton2" th:onclick="|location.href='@{/content/list/2}'|">자유게시판</button>
-    <button class="myButton2" th:onclick="|location.href='@{/user/list}'|">유저리스트</button>
-    <button class="myButton2" th:onclick="|location.href='@{/content/list/4}'|">내가 좋아한 글</button>
-  </div>
 
-  <div style="display: inline-block">
-    <button th:onclick="|location.href='@{/user/logout}'|">로그아웃</button>
-    <button th:onclick="|location.href='@{/user/edit}'|">정보수정</button>
-  </div>
+
 
 </div>
 <br/><br/>
