@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
@@ -75,17 +74,20 @@
 </header>
 <body>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h3>Sign In</h3>
+<div class="main">
+
 <div align="center">
   <div class="container" align="center">
   <form action="loginForm.html" th:action th:method="post" th:object="${signInDTO}">
     <div>
-      <label th:for="loginId">아이디 : </label>
+      <label th:for="loginId"> 아이디  </label><br>
       <input type="text" th:field="*{loginId}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{loginId}"></div>
     </div>
     <br/>
     <div>
-      <label th:for="password">비밀번호 : </label>
+      <label th:for="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호  </label><br>
       <input type="password" th:field="*{password}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{password}"></div>
     </div>
@@ -99,27 +101,32 @@
 
 </div>
 </div>
+  </div>
+</div>
 </body>
 </html>
 
 <style>
 
     .container {
-        width: 500px;
-        height: 300px;
-        margin-top:-20px;
+        width: 400px;
+        height: 280px;
+        margin-top:15px;
         padding-top: 50px;
         border: 2px solid;
+        background-color:
+
     }
     input {
         border: 3px solid black;
         width: 200px;
         height: 30px;
+        float
     }
     label {
         font-weight: bolder;
         font-size: large;
-
+        margin-left:-150px
     }
     button {
         width: 150px;
@@ -128,6 +135,17 @@
         font-weight: bolder;
         font-size: x-large;
         border: 3px solid;
-        border-radius: 15px;
+        border-radius: 6px;
+        margin-top:50px;
     }
+
+    h3{
+    color: black;
+    text-align:center;
+    margin-top:-50px;
+    font-weight:bold;
+    }
+
+
+
 </style>

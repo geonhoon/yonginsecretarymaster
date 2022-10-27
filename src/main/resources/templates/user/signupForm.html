@@ -75,29 +75,34 @@
 </header>
 <body>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<h3>Sign Up</h3><br><br>
+
 <div align="center">
   <div class="container" align="center">
   <form action="signupForm.html" th:action th:method="post" th:object="${signUpDTO}">
     <div>
-      <label th:for="loginId">아이디 : </label>
+      <label th:for="loginId" >아이디  </label> <br>
       <input type="text" th:field="*{loginId}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{loginId}" />
     </div>
     <br/>
     <div>
-      <label th:for="password">비밀번호 : </label>
+      <label th:for="password">&nbsp;&nbsp;&nbsp;비밀번호  </label> <br>
       <input type="password" th:field="*{password}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{password}" />
     </div>
     <br/>
     <div>
-      <label th:for="passwordCheck">비밀번호 확인 : </label>
+      <label th:for="passwordCheck">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인  </label><br>
+
       <input type="password" th:field="*{passwordCheck}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{passwordCheck}" />
     </div>
     <br/>
     <div>
-      <label th:for="nickname">닉네임 : </label>
+      <label th:for="nickname" >닉네임  </label> <br>
       <input type="text" th:field="*{nickname}" th:errorclass="field-error"/>
       <div class="field-error" th:errors="*{nickname}" />
     </div>
@@ -115,10 +120,11 @@
 
     .container {
         width: 500px;
-        height: 400px;
-        margin-top:-20px;
-        padding-top: 50px;
+        height: 390px;
+        margin-top:-25px;
+        padding-top: 20px;
         border: 2px solid;
+        margin-right: 520px;
     }
     input {
         border: 3px solid black;
@@ -128,6 +134,10 @@
     label {
         font-weight: bolder;
         font-size: large;
+        margin-left:-150px
+
+
+
 
     }
     button {
@@ -137,6 +147,15 @@
         font-weight: bolder;
         font-size: x-large;
         border: 3px solid;
-        border-radius: 15px;
+        border-radius: 6px;
     }
+
+      h3{
+    color: black;
+    text-align:center;
+    margin-top:-50px;
+    font-weight:bold
+    }
+
+
 </style>
